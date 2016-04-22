@@ -1,10 +1,11 @@
 import random
 
+
 class Die(object):
     """
     A dice object. It has a color, and numbers.
     In the future, it may end up supporting symbols instead, if numbers
-    are too boring to keep player's interest.
+    are too boring to keep layout's interest.
     """
 
     def __init__(self, color, sides=range(1, 7)):
@@ -14,9 +15,10 @@ class Die(object):
     def roll(self):
         return (self.color, random.choice(self.sides))
 
+
 class Dicebag(object):
     """
-    The player's collection of dice objects.
+    The layout's collection of dice objects.
     """
 
     def __init__(self, dice=None):
