@@ -1,4 +1,4 @@
-import dice
+from dice import Die
 
 class Layout(object):
     """
@@ -23,118 +23,74 @@ class Layout(object):
 
 
 class Rouge(object):
+    major_dice = [Die('white')] * 5 + [Die('red')] + [Die('black')] * 3
+    major = Layout(
+        dice=major_dice,
+        health=1,
+        armor=1,
+        agility=2
+    )
 
-    @staticmethod
-    @property
-    def major():
-        dice = ['white'] * 5 + ['red'] + ['black'] * 3
-
-        return Layout(
-            dice=dice,
-            health=1,
-            armor=1,
-            agility=2
-        )
-
-    @staticmethod
-    @property
-    def minor():
-        dice = ['red', 'black']
-
-        return Layout(
-            dice=dice,
-            health=1,
-            agility=1
-        )
+    minor_dice = [Die('red')] + [Die('black')]
+    minor = Layout(
+        dice=dice,
+        health=1,
+        agility=1
+    )
 
 
 class Wizard(object):
+    major_dice = [Die('white')] * 3 + [Die('blue')] * 3 + [Die('green')]
+    major = Layout(
+        dice=dice,
+        health=1
+    )
 
-    @staticmethod
-    @property
-    def major():
-        dice = ['white'] * 3 + ['blue'] * 3 + ['green']
-
-        return Layout(
-            dice=dice,
-            health=1
-        )
-
-    @staticmethod
-    @property
-    def minor():
-        dice = ['blue'] + ['green']
-
-        return Layout(
-            dice=dice
-        )
+    minor_dice = [Die('blue')] + [Die('green')]
+    minor = Layout(
+        dice=dice
+    )
 
 class Cleric(object):
+    major_dice = [Die('white')] * 4 + [Die('blue')] + [Die('green')] * 3
+    major = Layout(
+        dice=dice,
+        health=1
+    )
 
-    @staticmethod
-    @property
-    def major():
-        dice = ['white'] * 4 + ['blue'] + ['green'] * 3
-
-        return Layout(
-            dice=dice,
-            health=1
-        )
-
-    @staticmethod
-    @property
-    def minor():
-        dice = ['blue'] + ['green']
-        return Layout(
-            dice=dice
-        )
+    minor_dice = [Die('blue')] + [Die('green')]
+    minor = Layout(
+        dice=dice
+    )
 
 
 class Fighter(object):
+    major_dice = [Die('white')] * 6 + [Die('red')] * 3 + [Die('black')]
+    major = Layout(
+        dice=dice,
+        health=1,
+        armor=1,
+        agility=1
+    )
 
-    @staticmethod
-    @property
-    def major():
-        dice = ['white'] * 6 + ['red'] * 3 + ['black']
-
-        return Layout(
-            dice=dice,
-            health=1,
-            armor=1,
-            agility=1
-        )
-
-    @staticmethod
-    @property
-    def minor():
-        dice = ['red'] + ['black']
-
-        return Layout(
-            dice=dice,
-            armor=1,
-            agility=1
-        )
+    minor_dice = [Die('red')] + [Die('black')]
+    minor = Layout(
+        dice=dice,
+        armor=1,
+        agility=1
+    )
 
 
 class Bard(object):
+    major_dice = [Die('white')] * 4 + [Die('red')] + [Die('blue')] + [Die('black')] + [Die('green')]
+    major = Layout(
+        dice=dice,
+        agility=1,
+        health=1
+    )
 
-    @staticmethod
-    @property
-    def major():
-        dice = ['white'] * 4 + ['red', 'blue', 'black', 'green']
-
-        return Layout(
-            dice=dice,
-            agility=1,
-            health=1
-        )
-
-    @staticmethod
-    @property
-    def minor():
-        dice = ['red'] + ['blue']
-
-        return Layout(
-            dice=dice,
-            agility=1
-        )
+    minor_dice = [Die('red')] + [Die('blue')]
+    minor = Layout(
+        dice=dice,
+        agility=1
+    )

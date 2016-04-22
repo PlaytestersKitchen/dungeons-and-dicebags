@@ -5,4 +5,5 @@ class Player(object):
     """
 
     def __init__(self, major_class, minor_class):
-        pass
+        self.major_class = major_class
+        self.minor_class = minor_class

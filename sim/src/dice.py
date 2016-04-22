@@ -25,6 +25,9 @@ class Dicebag(object):
 
         self.dice = dice
 
+    def __len__(self):
+        return len(self.dice)
+
     def draw(self, limit):
         return random.sample(self.dice, limit)
 
